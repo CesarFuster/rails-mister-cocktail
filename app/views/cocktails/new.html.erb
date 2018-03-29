@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="title">
+    <h2>New Cocktail - Write a name</h2>
+  </div>
+
+  <div>
+    <p><%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, "Create", class: "btn btn-danger" %>
+    <% end %></p>
+  </div>
+
+  <div>
+    <p><%= link_to "Back to All Cocktails", root_path %></p>
+  </div>
+
+</div>
+
+
+
+
+
