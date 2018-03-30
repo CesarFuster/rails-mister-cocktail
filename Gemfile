@@ -44,7 +44,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'mini_magick'
 gem 'fog-aws'
-gem 'yui-compressor', '~> 0.12.0'
+# gem 'yui-compressor', '~> 0.12.0'
 
 
 group :development, :test do
