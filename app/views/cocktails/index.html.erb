@@ -1,6 +1,9 @@
 <div class="container">
   <h2>cocktails</h2>
 
+  <%= cl_image_tag("ppjtaxbnopezarumznvs",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
   <div class="add-cocktail"><p> <%= link_to "Add a Cocktail", new_cocktail_path %> </p></div>
 
   <div>
