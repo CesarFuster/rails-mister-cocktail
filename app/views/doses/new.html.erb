@@ -1,7 +1,19 @@
-<div>
-  <p><%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient %>
-  <%= f.input :description %>
-  <%= f.submit "Add", class: "btn btn-danger" %>
-  <% end %></p>
+<div class="container">
+
+  <div>
+    <p><%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient %></p>
+    <p><%= f.input :description %></p>
+    <p><%= f.submit "Add", class: "btn btn-danger" %>
+    <% end %></p>
+  </div>
+
+  <div>
+    <p> <i class="fas fa-arrow-circle-left"></i> <%= link_to "back to #{@cocktail.name}", cocktail_path(@cocktail) %></p>
+  </div>
+
+  <div>
+    <p> <i class="fas fa-arrow-circle-left"></i> <%= link_to "back to all", root_path %></p>
+  </div>
+
 </div>
