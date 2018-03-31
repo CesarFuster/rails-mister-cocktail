@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+
+  get 'reviews/create'
+
   resources :ingredients, only: [:index, :show, :new, :create]
   resources :cocktails, only: [:index, :show, :new, :create] do
     resources :doses, only: [ :index, :new, :create ]
