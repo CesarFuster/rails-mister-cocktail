@@ -20,6 +20,25 @@
     <p> <i class="fas fa-plus-circle"></i> <%= link_to "include dose of ingredients", new_cocktail_dose_path(@cocktail) %></p>
   </div>
 
+  <h3>Reviews</h3>
+  <div class="reviews">
+    <% @reviews.each do |review| %>
+    <p> <%= review.description %> </p>
+    <p> <%= review.rating %> </p>
+    <% end %>
+  </div>
+
+  <h3>Do Your Review</h3>
+  <div class="your-review">
+    <div >
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
+      <%= f.submit "Add a Review", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+
   <div>
     <p> <i class="fas fa-arrow-circle-left"></i> <%= link_to "back to all", root_path %></p>
   </div>
