@@ -1,8 +1,10 @@
 <div class="container">
+  <div class="title-cocktail">
+    <h2> <%= @cocktail.name %> </h2>
+  </div>
 
-  <div>
-    <h1> <%= @cocktail.name %> </h1>
-    <p> <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %> </p>
+  <div class="show-cocktail col-xs-12 col-sm-8">
+    <p> <%= cl_image_tag @cocktail.photo, height: 300, width: 500, crop: :fill %> </p>
     <% @doses.each do |dose| %>
     <p> <%= dose.description %> of <%= dose.ingredient.name %>
       <%= link_to "delete", dose_path(dose),
@@ -10,36 +12,34 @@
       data: { confirm: "are you sure?" } %>
     </p>
     <% end %>
-  </div>
 
-  <div>
-    <p> </p>
-  </div>
-
-  <div>
-    <p> <i class="fas fa-plus-circle"></i> <%= link_to "include dose of ingredients", new_cocktail_dose_path(@cocktail) %></p>
-  </div>
-
-  <h3>Reviews</h3>
-  <div class="reviews">
-    <% @reviews.each do |review| %>
-    <p> <%= review.description %> </p>
-    <p> <%= review.rating %> </p>
-    <% end %>
-  </div>
-
-  <h3>Do Your Review</h3>
-  <div class="your-review">
-    <div >
-      <%= simple_form_for [@cocktail, @review] do |f| %>
-      <%= f.input :description %>
-      <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
-      <%= f.submit "Add a Review", class: "btn btn-danger" %>
-      <% end %>
+    <div>
+      <p> <i class="fas fa-plus-circle"></i> <%= link_to "include dose of ingredients", new_cocktail_dose_path(@cocktail) %></p>
     </div>
   </div>
 
-  <div>
+  <div class="list-reviews col-xs-12 col-sm-4">
+    <div class="reviews">
+      <h3>reviews</h3>
+      <% @reviews.each do |review| %>
+      <p> <%= review.description %> </p>
+      <p> <%= review.rating %> </p>
+      <% end %>
+    </div>
+
+    <h3>do your review</h3>
+    <div class="your-review">
+      <div >
+        <%= simple_form_for [@cocktail, @review] do |f| %>
+        <%= f.input :description %>
+        <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
+        <%= f.submit "Add a Review", class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-to-all">
     <p> <i class="fas fa-arrow-circle-left"></i> <%= link_to "back to all", root_path %></p>
   </div>
 
