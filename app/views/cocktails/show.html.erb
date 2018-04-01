@@ -1,18 +1,20 @@
 <div class="container">
+
   <div class="title-cocktail">
     <h2> <%= @cocktail.name %> </h2>
   </div>
 
   <div class="show-cocktail col-xs-12 col-sm-8">
-    <p> <%= cl_image_tag @cocktail.photo, height: 300, width: 500, crop: :fill %> </p>
-    <% @doses.each do |dose| %>
-    <p> <%= dose.description %> of <%= dose.ingredient.name %>
-      <%= link_to "delete", dose_path(dose),
-      method: :delete,
-      data: { confirm: "are you sure?" } %>
-    </p>
-    <% end %>
-
+    <div class="cocktail">
+      <p> <%= cl_image_tag @cocktail.photo, height: 300, width: 500, crop: :fill %> </p>
+      <% @doses.each do |dose| %>
+      <p> <%= dose.description %> of <%= dose.ingredient.name %>
+        <%= link_to "delete", dose_path(dose),
+        method: :delete,
+        data: { confirm: "are you sure?" } %>
+      </p>
+      <% end %>
+    </div>
     <div>
       <p> <i class="fas fa-plus-circle"></i> <%= link_to "include dose of ingredients", new_cocktail_dose_path(@cocktail) %></p>
     </div>

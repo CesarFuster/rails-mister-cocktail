@@ -8,19 +8,6 @@ body {
   font-family: helvetica, sans-serif;
 }
 
-.list-reviews {
-  background-color: #930077;
-  color: #FFBD39;
-  padding: 10px;
-  height: 400px;
-}
-
-.list-reviews h3 {
-  color: #FFBD39;
-  font-weight: lighter;
-  font-size: 20px;
-}
-
 .title-cocktail {
   text-align: left;
   height: 40px;
@@ -34,7 +21,19 @@ body {
   padding: 10px;
   font-weight: lighter;
   font-size: 30px;
+}
 
+.list-reviews {
+  background-color: #930077;
+  color: #FFBD39;
+  padding: 10px;
+  height: 400px;
+}
+
+.list-reviews h3 {
+  color: #FFBD39;
+  font-weight: lighter;
+  font-size: 20px;
 }
 
 .back-to-all {
