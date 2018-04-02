@@ -1,10 +1,10 @@
 <div class="container">
 
   <div class="title">
-    <h1>new</h1>
+    <h2>new</h2>
   </div>
 
-  <div>
+  <div class="new-cocktail col-xs-12 col-sm-4">
     <p><%= simple_form_for @cocktail do |f| %>
     <%= f.input :name %> </p>
     <p><%= f.input :photo %>
@@ -14,7 +14,7 @@
   </div>
 
   <div>
-    <p> <i class="fas fa-arrow-circle-left"></i> <%= link_to "back to all", root_path %></p>
+    <p class="back-to-all"> <i class="fas fa-arrow-circle-left"></i> <%= link_to "back to all", root_path %></p>
   </div>
 
 </div>
